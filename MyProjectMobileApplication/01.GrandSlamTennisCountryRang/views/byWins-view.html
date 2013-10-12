@@ -1,0 +1,17 @@
+﻿<div data-role="view" id="byWins-view" data-id="byWins-view"
+     data-layout="main-layout" data-title="Countries by wins"
+     data-show="app.countriesByWins.init">
+    <div id="categories-holder">
+        <ul data-role="listview"
+                data-bind="source: countriesByWin32"   
+                data-text-field="Name"
+                data-template="countriesByWins-template"
+                >
+        </ul>
+    </div>
+</div>
+ <script id="countriesByWins-template" type="text/x-kendo-template">
+            <div>
+                <h2>#: Name #: #: Wins# </h2>
+            </div>
+</script>

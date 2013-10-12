@@ -1,0 +1,18 @@
+<div data-role="view" id="continents-view" data-id="continents-view"
+     data-layout="main-layout" data-title="Continents"
+     data-show="app.continents.init">
+    <div id="categories-holder">
+        <ul data-role="listview"
+                data-bind="source: continent"
+                data-text-field="Name"
+                data-template="continent-template"
+                >
+        </ul>
+    </div>
+</div>
+ <script id="continent-template" type="text/x-kendo-template">
+            <div>
+                <h2>#: Name #:  </br> #:TheCountries#</h2> 
+                </br>
+            </div>
+</script>
