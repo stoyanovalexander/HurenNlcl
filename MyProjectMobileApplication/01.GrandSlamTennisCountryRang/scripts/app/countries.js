@@ -3,25 +3,24 @@
 (function (a) {
     function getByWins() {
         httpRequest.getJSON(app.servicesBaseUrl + "country/win")
-        .then(function (countriesByWin2) {
-            viewModel.set("theCountries", countriesByWin2);
+        .then(function (countriesByWin) {
+            viewModel.set("countriesTake", countriesByWin);
         });
     }
 
     function getByLocation() {
         cordovaExt.getLocation().
         then(function (location) {
-            //var locationString = location.coords.latitude + "," + location.coords.longitude;
-            return httpRequest.getJSON(app.servicesBaseUrl + "country/loc?longt=" + +location.coords.longitude + "&lat=" + location.coords.latitude);
+            return httpRequest.getJSON(app.servicesBaseUrl + "country/loc?longt=" +
+                location.coords.longitude + "&lat=" + location.coords.latitude);
         })
-        .then(function (countriesByLocation12) {
-            viewModel.set("theCountries", countriesByLocation12);
-            //console.log(places);
+        .then(function (countriesByLocation) {
+            viewModel.set("countriesTake", countriesByLocation);
         });
     }
 
     var viewModel = kendo.observable({
-        theCountries: [],
+        countriesTake: [],
         getByWins: getByWins,
         getByLocation: getByLocation
     });

@@ -15,11 +15,9 @@ namespace Parser.WikiParser
         public string extractAllHtmlINeed()
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
-
             WebRequest req = 
                 HttpWebRequest.Create("http://en.wikipedia.org/w/index.php?title=List_of_Grand_Slam_men%27s_singles_champions&action=edit");
             req.Method = "GET";
-
             string source;
             using (StreamReader reader = new StreamReader(req.GetResponse().GetResponseStream()))
             {
@@ -138,7 +136,7 @@ namespace Parser.WikiParser
             locationsForCountry.Add("NLD", new Point() { LatT = 52.21, LongT = 4.52 });
             locationsForCountry.Add("AUT", new Point() { LatT = 48.16, LongT = 16.21 });
             locationsForCountry.Add("ROU", new Point() { LatT = 44.25, LongT = 26.06 });
-            locationsForCountry.Add("ECU", new Point() { LatT = 23, LongT = 100 });
+            locationsForCountry.Add("ECU", new Point() { LatT = -0.26, LongT = -78.57 });
             locationsForCountry.Add("ITL", new Point() { LatT = 41.53, LongT = 12.29 });
             locationsForCountry.Add("SAF", new Point() { LatT = -34.01, LongT = 18.54 });
             locationsForCountry.Add("UK", new Point() { LatT = 51.30, LongT = 0.07 });

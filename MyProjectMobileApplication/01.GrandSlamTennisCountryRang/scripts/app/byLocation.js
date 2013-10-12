@@ -2,8 +2,7 @@
 
 (function (a) {
     var viewModel = kendo.observable({
-        countriesByLocation132: [],
-
+        countrieByLocationTake: [],
     });
 
     function init(e) {
@@ -15,9 +14,9 @@
              return httpRequest.getJSON(app.servicesBaseUrl +
                  "country/loc?longt=" + +location.coords.longitude + "&lat=" + location.coords.latitude);
          })
-        .then(function (countriesByLocation12) {
-            console.log(countriesByLocation12);
-            viewModel.set("countriesByLocation132", countriesByLocation12);
+        .then(function (countriesByLocation) {
+            console.log(countriesByLocation);
+            viewModel.set("countrieByLocationTake", countriesByLocation);
         });
     }
 

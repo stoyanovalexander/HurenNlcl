@@ -2,15 +2,14 @@ var app = app || {};
 
 (function(a) {
     var viewModel = kendo.observable({
-        continent: [],
-        
+        continentTake: [], 
     });
     
     function init(e) {
         kendo.bind(e.view.element, viewModel);
         httpRequest.getJSON( app.servicesBaseUrl + "continent")
         .then(function (continent) {
-            viewModel.set("continent", continent);
+            viewModel.set("continentTake", continent);
         });        
     }
     

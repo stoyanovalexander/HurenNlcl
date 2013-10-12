@@ -2,15 +2,14 @@
 
 (function (a) {
     var viewModel = kendo.observable({
-        countriesByWin32: [],
-
+        countriesByWinTake: [],
     });
 
     function init(e) {
         kendo.bind(e.view.element, viewModel);
         httpRequest.getJSON(app.servicesBaseUrl + "country/win")
-        .then(function (countriesByWin2) {
-            viewModel.set("countriesByWin32", countriesByWin2);
+        .then(function (countriesByWin) {
+            viewModel.set("countriesByWinTake", countriesByWin);
         });
     }
 

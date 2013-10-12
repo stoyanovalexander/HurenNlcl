@@ -20,7 +20,6 @@ namespace Parser.Controllers
             this.parser = new HtmlParser();
         }
 
-
         [ActionName("all")]
         public HttpResponseMessage GetAllCountries()
         {
@@ -30,6 +29,7 @@ namespace Parser.Controllers
 
             return this.Request.CreateResponse(HttpStatusCode.OK, this.countries);
         }
+
         [ActionName("loc")]
         public HttpResponseMessage GetSortedByPosition(double longt, double lat)
         {
@@ -49,6 +49,7 @@ namespace Parser.Controllers
 
             return this.Request.CreateResponse(HttpStatusCode.OK, sorted);
         }
+
         [ActionName("win")]
         public HttpResponseMessage GetSortedByWin()
         {

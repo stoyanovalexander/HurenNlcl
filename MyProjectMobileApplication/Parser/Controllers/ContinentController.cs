@@ -39,8 +39,6 @@ namespace Parser.Controllers
             this.africa.Name = "Africa";
             this.australia.Name = "Australia";
             this.sAmerica.Name = "South America";
-
-
         }
 
         private ICollection<Continent> InitContinentsContent()
@@ -189,7 +187,6 @@ namespace Parser.Controllers
 
             return continents;
         }
-
 
         public HttpResponseMessage GetContinents()
         {
