@@ -119,6 +119,7 @@
     <Content Include="kendo\styles\textures\transparency.png" />
     <Content Include="kendo\styles\textures\transtexture.png" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\app\byLocation.js" />
     <Content Include="scripts\app\continents.js" />
     <Content Include="scripts\app\countriesByLocation.js" />
     <Content Include="scripts\app\countriesByWins.js" />
@@ -127,6 +128,7 @@
     <Content Include="scripts\app\places.js" />
     <Content Include="scripts\libs\rsvp.min.js" />
     <Content Include="styles\app.css" />
+    <Content Include="views\byLocation-view.html" />
     <Content Include="views\continents-view.html" />
     <Content Include="views\countriesByLocation-view.html" />
     <Content Include="views\countriesByWins-view.html" />

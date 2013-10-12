@@ -5,12 +5,12 @@
         cordovaExt.getLocation().
         then(function(location) {
             var locationString = location.coords.latitude + "," + location.coords.longitude;            
-            return httpRequest.getJSON(app.servicesBaseUrl + "country/loc?longt=" + location.coords.longitude + "&lat" + location.coords.latitude);
+            return httpRequest.getJSON(app.servicesBaseUrl + "country/loc?longt=" + location.coords.longitude + "&lat=" + location.coords.latitude);
             //GET api/country/loc?longt={longt}&lat={lat}
         })
         .then(function (countriesByLocation2) {
             viewModel.set("countriesByLocation32", countriesByLocation2);
-            //console.log(places);
+            //console.log(countriesByLocation32);
         });
     }
     var viewModel = kendo.observable({
