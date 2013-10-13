@@ -10,7 +10,7 @@
         cordovaExt.getLocation().
          then(function (location) {
              return httpRequest.getJSON(app.servicesBaseUrl +
-                 "country/loc?longt=" + +location.coords.longitude + "&lat=" + location.coords.latitude);
+                 "country/loc?longt=" +location.coords.longitude + "&lat=" + location.coords.latitude);
          })
         .then(function (countriesByLocation) {
             viewModel.set("countrieByLocationTake", countriesByLocation);
