@@ -107,72 +107,6 @@ namespace Parser.Controllers
                 }
             }
 
-            var allContriesInContinent = "";
-            foreach (var country in africa.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.africa.TheCountries = allContriesInContinent;
-
-            allContriesInContinent = "";
-            foreach (var country in australia.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.australia.TheCountries = allContriesInContinent;
-
-            allContriesInContinent = "";
-            foreach (var country in asia.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.asia.TheCountries = allContriesInContinent;
-
-            allContriesInContinent = "";
-            foreach (var country in euorpe.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.euorpe.TheCountries = allContriesInContinent;
-
-            allContriesInContinent = "";
-            foreach (var country in nAmerica.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.nAmerica.TheCountries = allContriesInContinent;
-
-            allContriesInContinent = "";
-            foreach (var country in sAmerica.Countries)
-            {
-                allContriesInContinent += country.Name + ",\n";
-            }
-            if (allContriesInContinent.Length > 2)
-            {
-                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
-            }
-            this.sAmerica.TheCountries = allContriesInContinent;
-
             ICollection<Continent> continents = new HashSet<Continent>() 
             { 
                 this.africa,
@@ -192,6 +126,17 @@ namespace Parser.Controllers
             var continents = this.InitContinentsContent();
 
             return this.Request.CreateResponse(HttpStatusCode.OK,continents);
+        }
+
+        public HttpResponseMessage GetContinentsById(string name)
+        {
+            var continents = this.InitContinentsContent();
+            var theContinent=continents.FirstOrDefault(c => c.Name == name);
+            if (theContinent == null)
+            {
+                throw new ArgumentNullException("No such Continent");
+            }
+            return this.Request.CreateResponse(HttpStatusCode.OK, theContinent);
         }
     }
 }

@@ -2,17 +2,14 @@
      data-layout="main-layout" data-title="Continents"
      data-show="app.continents.init">
     <div id="categories-holder">
-        <ul data-role="listview"
-                data-bind="source: continentTake"
+          <select id="continents-list" data-role="dropdownlist"
+                data-bind="source: continentTake, events: { change: change }"
                 data-text-field="Name"
-                data-template="continent-template"
-                >
-        </ul>
+                data-value-field="Id">
+        </select>
+        <div id="continents-info">
+            <h1 data-bind="text: selectedContinent.Name" data-align="center"></h1>            
+            <ul data-role="listview" data-bind="source: selectedContinent.Countries" data-template="countries-template"></ul>                
+        </div>
     </div>
 </div>
- <script id="continent-template" type="text/x-kendo-template">
-            <div>
-                <h2>#: Name #:  </br> #:TheCountries#</h2> 
-                </br>
-            </div>
-</script>

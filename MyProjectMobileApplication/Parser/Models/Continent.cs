@@ -8,9 +8,7 @@ namespace Parser.Models
     public class Continent
     {
         public string Name { get; set; }
-        public string TheCountries { get; set; }
         public ICollection<Country> Countries { get; set; }
-
         public Continent()
         {
             this.Countries = new HashSet<Country>();
