@@ -39,6 +39,7 @@ namespace Parser.Controllers
             this.africa.Name = "Africa";
             this.australia.Name = "Australia";
             this.sAmerica.Name = "South America";
+            this.other.Name = "I will add this country to the right continent soon";
         }
 
         private ICollection<Continent> InitContinentsContent()
@@ -104,75 +105,73 @@ namespace Parser.Controllers
                 {
                     this.other.Countries.Add(coutr);
                 }
-                this.other.Name = "I will add this country to the right continent soon";
-
             }
 
-            var myCountries = "";
+            var allContriesInContinent = "";
             foreach (var country in africa.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.africa.TheCountries = myCountries;
+            this.africa.TheCountries = allContriesInContinent;
 
-            myCountries = "";
+            allContriesInContinent = "";
             foreach (var country in australia.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.australia.TheCountries = myCountries;
+            this.australia.TheCountries = allContriesInContinent;
 
-            myCountries = "";
+            allContriesInContinent = "";
             foreach (var country in asia.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.asia.TheCountries = myCountries;
+            this.asia.TheCountries = allContriesInContinent;
 
-            myCountries = "";
+            allContriesInContinent = "";
             foreach (var country in euorpe.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.euorpe.TheCountries = myCountries;
+            this.euorpe.TheCountries = allContriesInContinent;
 
-            myCountries = "";
+            allContriesInContinent = "";
             foreach (var country in nAmerica.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.nAmerica.TheCountries = myCountries;
+            this.nAmerica.TheCountries = allContriesInContinent;
 
-            myCountries = "";
+            allContriesInContinent = "";
             foreach (var country in sAmerica.Countries)
             {
-                myCountries += country.Name + ",\n";
+                allContriesInContinent += country.Name + ",\n";
             }
-            if (myCountries.Length > 2)
+            if (allContriesInContinent.Length > 2)
             {
-                myCountries = myCountries.Remove(myCountries.Length - 2);
+                allContriesInContinent = allContriesInContinent.Remove(allContriesInContinent.Length - 2);
             }
-            this.sAmerica.TheCountries = myCountries;
+            this.sAmerica.TheCountries = allContriesInContinent;
 
             ICollection<Continent> continents = new HashSet<Continent>() 
             { 

@@ -7,7 +7,7 @@ namespace Parser.Models
 {
     public class Point
     {
-        public double LongT { get; set; }
-        public double LatT { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
     }
 }

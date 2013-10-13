@@ -9,17 +9,8 @@ namespace Parser.Models
     {
         public string Name { get; set; }
         public int Wins { get; set; }
-        public double LongT { get; set; }
-        public double LotT { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
         public double Distance { get; set; }
-
-        public int CompareTo(Country other)
-        {
-            if (this.Wins > other.Wins)
-                return 1;
-            if (this.Wins == other.Wins)
-                return 0;
-            return -1;
-        }
     }
 }

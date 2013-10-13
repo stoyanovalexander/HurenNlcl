@@ -127,30 +127,28 @@ namespace Parser.WikiParser
     
         public List<Country> extractCountriesObj(List<string> countries)
         {
-            List<string> titlesCountAndCountryStr = new List<string>();
-
             Dictionary<string, Point> locationsForCountry = new Dictionary<string, Point>();
             // key value pairs
-            locationsForCountry.Add("FRA", new Point() { LatT = 48.74, LongT = 2.46 });
-            locationsForCountry.Add("CRO", new Point() { LatT = 45.48, LongT = 16 });
-            locationsForCountry.Add("NLD", new Point() { LatT = 52.21, LongT = 4.52 });
-            locationsForCountry.Add("AUT", new Point() { LatT = 48.16, LongT = 16.21 });
-            locationsForCountry.Add("ROU", new Point() { LatT = 44.25, LongT = 26.06 });
-            locationsForCountry.Add("ECU", new Point() { LatT = -0.26, LongT = -78.57 });
-            locationsForCountry.Add("ITL", new Point() { LatT = 41.53, LongT = 12.29 });
-            locationsForCountry.Add("SAF", new Point() { LatT = -34.01, LongT = 18.54 });
-            locationsForCountry.Add("UK", new Point() { LatT = 51.30, LongT = 0.07 });
-            locationsForCountry.Add("BRA", new Point() { LatT = -15.45, LongT = -47.57 });
-            locationsForCountry.Add("RUS", new Point() { LatT = 55.25, LongT = 37.37 });
-            locationsForCountry.Add("SRB", new Point() { LatT = 44.48, LongT = 20.28 });
-            locationsForCountry.Add("ARG", new Point() { LatT = -34.66, LongT = -58.18 });
-            locationsForCountry.Add("GER", new Point() { LatT = 52.31, LongT = 13.24 });
-            locationsForCountry.Add("CZE", new Point() { LatT = 50.01, LongT = 14.50 });
-            locationsForCountry.Add("SUI", new Point() { LatT = 46.94, LongT = 7.44 });
-            locationsForCountry.Add("ESP", new Point() { LatT = 40.26, LongT = -3.41 });
-            locationsForCountry.Add("AUS", new Point() { LatT = -35.18, LongT = 149.08 });
-            locationsForCountry.Add("SWE", new Point() { LatT = 59.28, LongT = 18.14 });
-            locationsForCountry.Add("USA", new Point() { LatT = 38.53, LongT = -77.02 });
+            locationsForCountry.Add("FRA", new Point() { Latitude = 48.74, Longitude = 2.46 });
+            locationsForCountry.Add("CRO", new Point() { Latitude = 45.48, Longitude = 16 });
+            locationsForCountry.Add("NLD", new Point() { Latitude = 52.21, Longitude = 4.52 });
+            locationsForCountry.Add("AUT", new Point() { Latitude = 48.16, Longitude = 16.21 });
+            locationsForCountry.Add("ROU", new Point() { Latitude = 44.25, Longitude = 26.06 });
+            locationsForCountry.Add("ECU", new Point() { Latitude = -0.26, Longitude = -78.57 });
+            locationsForCountry.Add("ITL", new Point() { Latitude = 41.53, Longitude = 12.29 });
+            locationsForCountry.Add("SAF", new Point() { Latitude = -34.01, Longitude = 18.54 });
+            locationsForCountry.Add("UK", new Point() { Latitude = 51.30, Longitude = 0.07 });
+            locationsForCountry.Add("BRA", new Point() { Latitude = -15.45, Longitude = -47.57 });
+            locationsForCountry.Add("RUS", new Point() { Latitude = 55.25, Longitude = 37.37 });
+            locationsForCountry.Add("SRB", new Point() { Latitude = 44.48, Longitude = 20.28 });
+            locationsForCountry.Add("ARG", new Point() { Latitude = -34.66, Longitude = -58.18 });
+            locationsForCountry.Add("GER", new Point() { Latitude = 52.31, Longitude = 13.24 });
+            locationsForCountry.Add("CZE", new Point() { Latitude = 50.01, Longitude = 14.50 });
+            locationsForCountry.Add("SUI", new Point() { Latitude = 46.94, Longitude = 7.44 });
+            locationsForCountry.Add("ESP", new Point() { Latitude = 40.26, Longitude = -3.41 });
+            locationsForCountry.Add("AUS", new Point() { Latitude = -35.18, Longitude = 149.08 });
+            locationsForCountry.Add("SWE", new Point() { Latitude = 59.28, Longitude = 18.14 });
+            locationsForCountry.Add("USA", new Point() { Latitude = 38.53, Longitude = -77.02 });
 
             List<Country> countryList = new List<Country>();
 
@@ -173,8 +171,8 @@ namespace Parser.WikiParser
                 if (locationsForCountry.ContainsKey(currCounty.Name))
                 {
                     var point = locationsForCountry[currCounty.Name];
-                    currCounty.LongT = point.LongT;
-                    currCounty.LotT = point.LatT;
+                    currCounty.Longitude = point.Longitude;
+                    currCounty.Latitude = point.Latitude;
                 }
                 countryList.Add(currCounty);
             }

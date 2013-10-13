@@ -39,13 +39,13 @@ namespace Parser.Controllers
 
             foreach (var item in this.countries)
             {
-                item.Distance =111.319*(Math.Sqrt((item.LotT - lat) * (item.LotT - lat) +
-                                       (item.LongT - longt) * (item.LongT - longt)));
+                item.Distance = 111.319 * (Math.Sqrt((item.Latitude - lat) * (item.Latitude - lat) +
+                                       (item.Longitude - longt) * (item.Longitude - longt)));
             }
 
             var sorted = this.countries
-                                   .OrderBy(p => Math.Sqrt((p.LotT - lat) * (p.LotT - lat) +
-                                       (p.LongT - longt) * (p.LongT - longt))).Select(p => p);
+                                   .OrderBy(p => Math.Sqrt((p.Latitude - lat) * (p.Latitude - lat) +
+                                       (p.Longitude - longt) * (p.Longitude - longt))).Select(p => p);
 
             return this.Request.CreateResponse(HttpStatusCode.OK, sorted);
         }
